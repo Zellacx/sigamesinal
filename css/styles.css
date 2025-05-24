@@ -1,0 +1,51 @@
+.hero-gradient {
+    background: linear-gradient(135deg, #b91c1c 0%, #1f2937 50%, #000000 100%);
+}
+.traffic-light {
+    width: 80px;
+    height: 200px;
+    background-color: #1f2937;
+    border-radius: 15px;
+    position: relative;
+}
+.light {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    left: 10px;
+}
+.red-light {
+    background-color: #b91c1c;
+    top: 15px;
+    box-shadow: 0 0 20px #b91c1c;
+}
+.yellow-light {
+    background-color: #f59e0b;
+    top: 70px;
+}
+.green-light {
+    background-color: #10b981;
+    bottom: 15px;
+}
+.active {
+    opacity: 1;
+}
+.inactive {
+    opacity: 0.3;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(185, 28, 28, 0.3);
+}
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #b91c1c;
+    transition: width .3s;
+}
+.nav-link:hover::after {
+    width: 100%;
+}

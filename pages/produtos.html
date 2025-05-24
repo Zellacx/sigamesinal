@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - SIGAME Sinalização Viária</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+    </style>
+</head>
+<body class="font-sans bg-gray-100">
+    <!-- Header -->
+    <header class="bg-gray-900 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="mr-4">
+                    <img src="../1x/Ativo_40_logo.png" alt="SIGAME Logo" class="h-16">
+                </div>
+                <!-- <h1 class="text-3xl font-bold">
+                    <span class="text-red-600">SIG</span><span class="text-gray-300">AME</span>
+                    <span class="block text-sm font-normal text-gray-400">Sinalização Viária</span>
+                </h1> -->
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="../index.html" class="nav-link text-gray-300 hover:text-white font-medium">Início</a>
+                <a href="servicos.html" class="nav-link text-gray-300 hover:text-white font-medium">Serviços</a>
+                <a href="produtos.html" class="nav-link text-white font-medium border-b-2 border-red-600">Produtos</a>
+                <a href="clientes.html" class="nav-link text-gray-300 hover:text-white font-medium">Clientes</a>
+                <a href="contato.html" class="nav-link text-gray-300 hover:text-white font-medium">Contato</a>
+            </nav>
+            
+            <button class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+    <br />
+
+    <!-- Page Header -->
+    <!-- <section class="page-header">
+        <div class="container mx-auto px-4">
+            <div class="breadcrumb">
+                <a href="../index.html" class="breadcrumb-item">Início</a>
+                <span class="breadcrumb-item">Produtos</span>
+            </div>
+            <h1 class="page-title">Nossos Produtos</h1>
+            <p class="page-description">Conheça nossa linha completa de produtos para sinalização viária</p>
+        </div>
+    </section> -->
+
+    <!-- Products Content -->
+    <section class="content-section bg-white">
+        <div class="container mx-auto px-4">
+            <hr /> <hr />
+            <!-- Category Tabs -->
+            <!-- <div class="mb-12 border-b border-gray-200">
+                <div class="flex flex-wrap -mb-px">
+                    <button class="inline-block p-4 font-medium text-lg border-b-2 border-red-600 text-red-600 mr-4">
+                        Todos
+                    </button>
+                    <button class="inline-block p-4 font-medium text-lg text-gray-500 hover:text-red-600 mr-4">
+                        Sinalização Horizontal
+                    </button>
+                    <button class="inline-block p-4 font-medium text-lg text-gray-500 hover:text-red-600 mr-4">
+                        Sinalização Vertical
+                    </button>
+                    <button class="inline-block p-4 font-medium text-lg text-gray-500 hover:text-red-600 mr-4">
+                        Equipamentos de Segurança
+                    </button>
+                </div>
+            </div> -->
+
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Product 1 -->
+                <!-- <div class="content-card group">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1518044730055-235c2c4eb3bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Tintas para Sinalização">
+                    </div>
+                    <div class="p-6">
+                        <div class="bg-red-100 text-red-600 text-xs font-medium px-2.5 py-0.5 rounded inline-block mb-3">
+                            Sinalização Horizontal
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Tintas para Sinalização Viária</h3>
+                        <p class="text-gray-600 mb-4">Tintas acrílicas especiais para sinalização horizontal com alta durabilidade e resistência às intempéries.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <span class="text-gray-800 font-semibold">A partir de R$ 250,00</span>
+                            <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition duration-300">
+                                Mais Informações
+                            </button>
+                        </div>
+                    </div>
+                </div> -->
+                
+                <!-- Product 2 -->
+                <div class="content-card group">
+                    <div class="card-image">
+                        <img src="../1x/sinalizacao_vertical.jpeg" 
+                             alt="Placas de Sinalização"
+                             style="width:95%;height:95%;">
+                    </div>
+                    <div class="p-6">
+                        <div class="bg-red-100 text-red-600 text-xs font-medium px-2.5 py-0.5 rounded inline-block mb-3">
+                            Sinalização Vertical
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Placas de Sinalização Viária</h3>
+                        <p class="text-gray-600 mb-4">Placas de regulamentação, advertência e indicação fabricadas com materiais de alta qualidade e durabilidade.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            
+                            <!-- <div class="popup">
+                                <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition duration-300" onclick="myFunction()">
+                                    Mais Informações
+                                    <span class="popuptext" id="myPopup">
+
+                                        <b>Valores a partir de R$ 120,00</b><br /><hr />Entre em contato para maiores especificações!
+                                    </span>
+                                </button>
+                            </div> -->
+       
+                            <!-- <script>
+                                // When the user clicks on <div>, open the popup
+                                function myFunction() {
+                                    var popup = document.getElementById("myPopup");
+                                    popup.classList.toggle("show");
+                                }
+                            </script> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <!-- <div class="content-card group">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1563299796-17596ed6b017?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Cones de Sinalização">
+                    </div>
+                    <div class="p-6">
+                        <div class="bg-red-100 text-red-600 text-xs font-medium px-2.5 py-0.5 rounded inline-block mb-3">
+                            Equipamentos de Segurança
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Cones de Sinalização</h3>
+                        <p class="text-gray-600 mb-4">Cones de sinalização de diversos tamanhos, fabricados com material flexível e com faixas refletivas.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <span class="text-gray-800 font-semibold">A partir de R$ 45,00</span>
+                            <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition duration-300">
+                                Mais Informações
+                            </button>
+                        </div>
+                    </div>
+                </div> -->
+                
+                <!-- Product 4 -->
+                <div class="content-card group">
+                    <div class="card-image">
+                        <img src="../1x/taxas_reflexivas_wide.jpeg" 
+                             alt="Tachas Refletivas">
+                    </div>
+                    <div class="p-6">
+                        <div class="bg-red-100 text-red-600 text-xs font-medium px-2.5 py-0.5 rounded inline-block mb-3">
+                            Sinalização Horizontal
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Dispositivos auxiliares de trânsito</h3>
+                        <p class="text-gray-600 mb-4">Dispositivos auxiliares à sinalização horizontal com elementos retrorrefletivos para maior visibilidade noturna.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <!-- <span class="text-gray-800 font-semibold">A partir de R$ 15,00</span>
+                            <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition duration-300">
+                                Mais Informações
+                            </button> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <!-- <div class="content-card group">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1592853598064-9aa241f48aa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Cavaletes">
+                    </div>
+                    <div class="p-6">
+                        <div class="bg-red-100 text-red-600 text-xs font-medium px-2.5 py-0.5 rounded inline-block mb-3">
+                            Equipamentos de Segurança
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Cavaletes e Barreiras</h3>
+                        <p class="text-gray-600 mb-4">Equipamentos para isolamento e canalização de tráfego em obras e eventos, com alta visibilidade diurna e noturna.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <span class="text-gray-800 font-semibold">A partir de R$ 180,00</span>
+                            <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition duration-300">
+                                Mais Informações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 -->
+                <!-- Product 6 -->
+                <div class="content-card group">
+                    <div class="card-image">
+                        <img src="../1x/suportes_para_placa_wide.jpeg" 
+                             alt="Suportes para Placas"
+                             style="width:83%;height:83%;">
+                    </div>
+                    <div class="p-6">
+                        <div class="bg-red-100 text-red-600 text-xs font-medium px-2.5 py-0.5 rounded inline-block mb-3">
+                            Sinalização Vertical
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Suportes para Placas</h3>
+                        <p class="text-gray-600 mb-4">Suportes metálicos para fixação de placas de sinalização, com tratamento anticorrosivo e pintura de alta durabilidade.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <!-- <span class="text-gray-800 font-semibold">A partir de R$ 90,00</span>
+                            <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition duration-300">
+                                Mais Informações
+                            </button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <!-- <div class="flex justify-center mt-12">
+                <nav class="inline-flex rounded-md shadow">
+                    <a href="#" class="py-2 px-4 bg-white border border-gray-300 rounded-l-md text-gray-500 hover:bg-gray-50">
+                        Anterior
+                    </a>
+                    <a href="#" class="py-2 px-4 bg-red-600 border border-red-600 text-white">
+                        1
+                    </a>
+                    <a href="#" class="py-2 px-4 bg-white border border-gray-300 text-gray-500 hover:bg-gray-50">
+                        2
+                    </a>
+                    <a href="#" class="py-2 px-4 bg-white border border-gray-300 text-gray-500 hover:bg-gray-50">
+                        3
+                    </a>
+                    <a href="#" class="py-2 px-4 bg-white border border-gray-300 rounded-r-md text-gray-500 hover:bg-gray-50">
+                        Próximo
+                    </a>
+                </nav>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-red-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Precisa de algum produto específico?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Entre em contato conosco e solicite um orçamento personalizado para seu projeto.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="bg-white text-red-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition duration-300">
+                    <i class="fas fa-phone-alt mr-2"></i> (11) 1234-5678
+                </button>
+                <button class="bg-transparent border-2 border-white hover:bg-white hover:text-red-600 px-8 py-4 rounded-lg font-semibold text-lg transition duration-300">
+                    <i class="fas fa-envelope mr-2"></i> contato@sigame.com.br
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="mr-2">
+                            <img src="../1x/Ativo_40_logo.png" alt="SIGAME Logo" class="h-12">
+                        </div>
+                        <!-- <h3 class="text-xl font-bold">
+                            <span class="text-red-600">SIG</span><span class="text-gray-300">AME</span>
+                        </h3> -->
+                    </div>
+                    <p class="text-gray-400 mb-4">Soluções completas em sinalização viária para tornar suas vias mais seguras e eficientes.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Úteis</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-400 hover:text-white">Início</a></li>
+                        <li><a href="servicos.html" class="text-gray-400 hover:text-white">Serviços</a></li>
+                        <li><a href="produtos.html" class="text-gray-400 hover:text-white">Produtos</a></li>
+                        <li><a href="clientes.html" class="text-gray-400 hover:text-white">Clientes</a></li>
+                        <li><a href="contato.html" class="text-gray-400 hover:text-white">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Serviços</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Sinalização Horizontal</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Sinalização Vertical</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Sinalização Temporária</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Consultoria</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Manutenção</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contato</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-red-600 mt-1 mr-2"></i>
+                            <span class="text-gray-400">R. Laerte Fenelon, 77<br>São José dos Pinhais - PR</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-red-600 mr-2"></i>
+                            <span class="text-gray-400">(41) 3385-0101</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-red-600 mr-2"></i>
+                            <span class="text-gray-400">sigamesinal@gmail.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-red-600 mr-2"></i>
+                            <span class="text-gray-400">Seg-Sex: 8h às 18h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 SIGAME Sinalização. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html> 

@@ -6,7 +6,7 @@
     <title>Serviços - SIGAME Sinalização Viária</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body class="font-sans bg-gray-100">
     <!-- Header -->
@@ -22,17 +22,25 @@
                 </h1> -->
             </div>
             
-            <nav class="hidden md:flex space-x-8">
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+              
+            <!-- Navigation Menu -->
+            <nav id="mobile-menu" class="hidden md:flex flex-col space-y-2 md:space-y-0 md:space-x-8 md:flex-row mt-4 md:mt-0">
                 <a href="../index.html" class="nav-link text-gray-300 hover:text-white font-medium">Início</a>
-                <a href="servicos.html" class="nav-link text-white font-medium border-b-2 border-red-600">Serviços</a>
+                <a href="servicos.html" class="nav-link text-gray-300 hover:text-white font-medium">Serviços</a>
                 <a href="produtos.html" class="nav-link text-gray-300 hover:text-white font-medium">Produtos</a>
                 <a href="clientes.html" class="nav-link text-gray-300 hover:text-white font-medium">Clientes</a>
                 <a href="contato.html" class="nav-link text-gray-300 hover:text-white font-medium">Contato</a>
             </nav>
-            
-            <button class="md:hidden text-white focus:outline-none">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
+              
+            <script>
+                document.getElementById('menu-toggle').addEventListener('click', function () {
+                    const menu = document.getElementById('mobile-menu');
+                    menu.classList.toggle('hidden');
+                });
+            </script>
         </div>
     </header>
 
@@ -338,6 +346,35 @@
         </div>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script>
+        // Traffic light animation
+        const lights = document.querySelectorAll('.light');
+        let currentLight = 0;
+        
+        function changeLight() {
+            lights.forEach(light => light.classList.add('inactive'));
+            lights.forEach(light => light.classList.remove('active'));
+            
+            lights[currentLight].classList.remove('inactive');
+            lights[currentLight].classList.add('active');
+            
+            currentLight = (currentLight + 1) % lights.length;
+        }
+        
+        // Initial light setup
+        lights[0].classList.add('active');
+        lights[1].classList.add('inactive');
+        lights[2].classList.add('inactive');
+        
+        // Change light every 3 seconds
+        setInterval(changeLight, 3000);
+        
+        // Mobile menu toggle (placeholder functionality)
+        const mobileMenuButton = document.querySelector('button.md\\:hidden');
+        mobileMenuButton.addEventListener('click', () => {
+            alert('Menu mobile seria aberto aqui');
+        });
+
+    </script>
 </body>
 </html> 
